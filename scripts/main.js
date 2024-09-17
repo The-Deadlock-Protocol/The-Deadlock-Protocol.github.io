@@ -47,16 +47,31 @@ function sortContentByDate(contentData) {
 }
 
 // Map Tags
+// function mapTags(tags, tagsData) {
+//     return tags.map(tag => {
+//         const item = document.createElement('span');
+//         const i = tagsData.find(i => i.data.name.toLowerCase() === tag.toLowerCase()) || {};
+
+//         item.className = 'tag';
+//         item.textContent = i.data?.name || tag;
+
+//         return item.outerHTML;
+//     }).join(':');
+// }
+
+// Map and Sort Tags by id
 function mapTags(tags, tagsData) {
+    const sortedTagsData = tagsData.sort((a, b) => a.id.localeCompare(b.id));
+
     return tags.map(tag => {
         const item = document.createElement('span');
-        const i = tagsData.find(i => i.data.name.toLowerCase() === tag.toLowerCase()) || {};
+        const i = sortedTagsData.find(i => i.data.name.toLowerCase() === tag.toLowerCase()) || {};
 
         item.className = 'tag';
         item.textContent = i.data?.name || tag;
 
         return item.outerHTML;
-    }).join(':');
+    }).join(', ');
 }
 
 // Map Authors
@@ -70,7 +85,7 @@ function mapAuthors(authors, authorsData) {
         item.textContent = i.data?.name || author;
 
         return item.outerHTML;
-    }).join(':');
+    }).join(', ');
 }
 
 // Render Headers
