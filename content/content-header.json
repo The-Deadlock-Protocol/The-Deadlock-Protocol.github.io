@@ -1,0 +1,26 @@
+[
+  {
+    "id": "0001",
+    "data": {
+      "name": "Date"
+    }
+  },
+  {
+    "id": "0002",
+    "data": {
+      "name": "Title"
+    }
+  },
+  {
+    "id": "0003",
+    "data": {
+      "name": "Tags"
+    }
+  },
+  {
+    "id": "0004",
+    "data": {
+      "name": "Author"
+    }
+  }
+]
