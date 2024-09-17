@@ -24,9 +24,12 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById('search-input').addEventListener('input', function() {
             const query = this.value.toLowerCase();
             const filteredContent = allContentData.filter(content => 
-                content.data.title.toLowerCase().includes(query)
-            );
-            renderContent(filteredContent, authorsData, tagsData);
+                content.data.title.toLowerCase().includes(query) // Ensure both are lower case
+                );
+            if (filteredContent.length === 0) {
+                console.log("No matching content found"); // Check if the filtering works
+            }
+            renderContent(filteredContent, authorsData, tagsData); // Render the filtered content
         });
     })
     .catch(error => console.error('Error loading data:', error));
