@@ -58,23 +58,8 @@ function mapTags(tags, tagsData) {
         item.textContent = i.data?.name || tag;
 
         return item.outerHTML;
-    }).join(':');
+    }).join(', ');
 }
-
-// Map and Sort Tags by id
-// function mapTags(tags, tagsData) {
-//     const sortedTagsData = tagsData.sort((a, b) => a.id.localeCompare(b.id));
-
-//     return tags.map(tag => {
-//         const item = document.createElement('span');
-//         const i = sortedTagsData.find(i => i.data.name.toLowerCase() === tag.toLowerCase()) || {};
-
-//         item.className = 'tag';
-//         item.textContent = i.data?.name || tag;
-
-//         return item.outerHTML;
-//     }).join(', ');
-// }
 
 // Map Authors
 function mapAuthors(authors, authorsData) {
