@@ -56,7 +56,7 @@ function mapTags(tags, tagsData) {
         item.textContent = i.data?.name || tag;
 
         return item.outerHTML;
-    }).join(', ');
+    }).join(':');
 }
 
 // Map Authors
@@ -70,7 +70,7 @@ function mapAuthors(authors, authorsData) {
         item.textContent = i.data?.name || author;
 
         return item.outerHTML;
-    }).join(', ');
+    }).join(':');
 }
 
 // Render Headers
